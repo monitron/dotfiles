@@ -1,0 +1,32 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/justin/Dropbox/" . "CarsonsTextAdventure/")
+ ("/home/justin/" . "Dropbox/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/justin/Dropbox/CarsonsTextAdventure/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "example.yml"
+ "example.txt"
+ "example.rb"
+ "example.json"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/justin/Dropbox/CarsonsTextAdventure/" (21460 28429 877193 373000) "example.json" ".#example.rb" "example.txt" "../" ".dropbox" "launcher.rb" "example.json~" "#example.rb#" "./")
+
+ ("/home/justin/" (21460 27834 899840 446000) "Downloads/" ".gtk-bookmarks" ".pulse-cookie" ".mozilla/" ".profile" ".local/" ".gvfs/" ".gnome2_private/" ".dbus/" "Templates/" "Desktop/" "../" ".dropbox/" ".vboxclient-clipboard.pid" ".gnome2/" ".xsession-errors" ".thumbnails/" ".bash_logout" "Pictures/" "Dropbox/" "Documents/" ".config/" "Music/" ".emacs.d/" "Videos/" ".mission-control/" "Public/" ".bashrc" ".dropbox-dist/" ".vboxclient-seamless.pid" ".vboxclient-display.pid" ".xsession-errors.old" ".gstreamer-0.10/" ".pulse/" ".emacs" ".ICEauthority" ".gconf/" "./" ".cache/" ".bash_history")
+
+ ("/home/justin/Dropbox/" (21460 27265 219130 71000) "2012-06-09_15-54-13_139.jpg" "Anno. Bib..pdf" "banner-ICE.jpg" ".ws.agile.1Password.settings" "CarsonsTextAdventure/" "dotfiles/" "Android intro.pdf" "goodness.flp" "IMG_20120420_082417.jpg" "p2.png" "../" ".dropbox" "Pql geopoint_01(3).jpg" "license.jpg" "p2.mtl" "awsomemnes opstacle course.fla" "Annotated Bib. 2 (fixed spacing).pdf" "IMG_20131112_130540.jpg" "signature.png" "2012-11-12_12-11-19_017.jpg" "awsomemnes opstacle course.swf" "p2.obj" "Annotated Bib. 2.pdf" "Screenshot_2013-04-08-10-42-15.png" "IMG_20120420_075508.jpg" "citi" "IMG_20120420_083929.jpg" ".dropbox.cache/" "mleemodel.png" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
