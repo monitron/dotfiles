@@ -1,0 +1,1 @@
+("/Volumes/git/personal/jarvis-ha/" "~/Downloads/UnoJoy-master/UnoJoy/ATmega8u2Code/" "/Volumes/git/palantir/blackbird/" "/Volumes/git/personal/dotfiles/")

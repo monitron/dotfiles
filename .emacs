@@ -1,8 +1,14 @@
 (require 'ido)
-(ido-mode t)
+(ido-mode 1)
+(ido-everywhere 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
 (setq load-path (cons "~/.emacs.d/" load-path))
 
-(require 'psvn)
+
+;(require 'psvn)
 
 (defun var-safe (v)
  (when (boundp v) (symbol-value v)))
@@ -23,7 +29,7 @@
 (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
-
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 (setq-default indent-tabs-mode nil)
 (setq c-basic-indent 2)
@@ -38,11 +44,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("e2e837fefe7cf7913c605f02d62fba12d9a6ad33aabcae3ab983c165c50967c6" "7345bbdc4312f073ac751730f027867a7dd252d844a21883ef4e23101fb63a7f" default)))
- '(erc-modules (quote (autojoin button completion fill irccontrols match menu netsplit noncommands readonly ring scrolltobottom stamp track)))
+ '(custom-safe-themes
+   (quote
+    ("e2e837fefe7cf7913c605f02d62fba12d9a6ad33aabcae3ab983c165c50967c6" "7345bbdc4312f073ac751730f027867a7dd252d844a21883ef4e23101fb63a7f" default)))
+ '(erc-modules
+   (quote
+    (autojoin button completion fill irccontrols match menu netsplit noncommands readonly ring scrolltobottom stamp track)))
  '(idle-update-delay 0.2)
  '(inhibit-startup-screen t)
  '(ns-command-modifier (quote meta))
+ '(package-selected-packages
+   (quote
+    (flx-ido projectile indium column-marker zoom-frm find-file-in-project yaml-mode swank-clojure smex sass-mode paredit neotree magit js2-mode highline helm-ls-git helm-git helm-gist)))
  '(sql-mysql-program "/usr/local/mysql/bin/mysql"))
 
 (transient-mark-mode 1)
@@ -144,7 +157,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :foundry "apple" :family "Inconsolata")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :foundry "nil" :family "Inconsolata"))))
+ '(mode-line ((t (:background "#f2f2f2" :foreground "black" :box nil :height 0.9 :family "Futura"))))
+ '(mode-line-inactive ((t (:background "#3f3f3f" :foreground "#eeeeee" :box nil :height 0.9 :family "Futura")))))
 
 
 (require 'smex)
@@ -153,3 +168,15 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/neotree-20140810.1926/")
 (require 'neotree)
+
+(global-set-key (kbd "M-p") 'projectile-find-file)
+(global-set-key (kbd "C-x C--") 'zoom-frm-out)
+(global-set-key (kbd "C-x C-+") 'zoom-frm-in)
+
+(add-hook 'coffee-mode-hook (lambda () (interactive) (column-marker-1 80)))
+(add-hook 'css-mode-hook (lambda () (interactive) (column-marker-1 80)))
+(add-hook 'js-mode-hook (lambda () (interactive) (column-marker-1 80)))
+
+(setq ffip-find-options "-not -regex \".*build.*\" -not -regex \".*jruby-.*\"")
+
+(flx-ido-mode 1)
